@@ -2,7 +2,7 @@ class SceneInit {
 	createScene() {
 		this.scene = new THREE.Scene();
 		this.scene.background = new THREE.Color(0xf1f1f1);
-		this.scene.fog = new THREE.Fog(0xf1f1f1, 30, 1);
+		this.scene.fog = new THREE.FogExp2(0xf1f1f1, 0.0005);
 
 		this.camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.1, 1000);
 		this.camera.position.set(0, 30, 120);
@@ -24,10 +24,10 @@ class SceneInit {
 		const dirLight = new THREE.DirectionalLight(0xffffff, 0.5);
 		dirLight.position.set(-80, 100, 40);
 		dirLight.castShadow = true;
-		dirLight.shadow.camera.left = -100;
-		dirLight.shadow.camera.right = 100;
-		dirLight.shadow.camera.top = 100;
-		dirLight.shadow.camera.bottom = -100;
+		dirLight.shadow.camera.left = -40;
+		dirLight.shadow.camera.right = 40;
+		dirLight.shadow.camera.top = 40;
+		dirLight.shadow.camera.bottom = -40;
 
 		this.targetObject = new THREE.Object3D();
 		this.scene.add(this.targetObject);

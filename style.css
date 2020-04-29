@@ -57,14 +57,6 @@ html {
     text-decoration: underline;
 }
 
-#c {
-    width: 100%;
-    height: 100%;
-    display: block;
-    top: 0;
-    left: 0;
-}
-
 .controls {
     position: absolute;
     bottom: 0;
@@ -144,10 +136,6 @@ html {
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
     background-size: cover;
     background-position: center;
-}
-
-.tray__swatch:nth-child(5n+5) {
-    margin-right: 20px;
 }
 
 .drag-notice {

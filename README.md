@@ -11,9 +11,12 @@ Enjoy [Live demo](https://sboez.github.io/3D-Model-Customizer-App/)
 
 Or :
 
+Clone the repo : 
 ```
 git clone https://github.com/sboez/3D-Model-Customizer-App.git
 ```
+
+Start local server :
 ```
 python -m SimpleHTTPServer
 ```

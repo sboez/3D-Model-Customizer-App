@@ -10,18 +10,37 @@
 		</style>
 	</head>
 	<body>
+		<!-- These toggle the the different parts of the chair that can be edited, note data-option is the key that links to the name of the part in the 3D file -->
+		<div class="options">
+		    <div class="option --is-active" data-option="legs">
+		        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1376484/legs.svg" alt=""/>
+		    </div>
+		    <div class="option" data-option="cushions">
+		        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1376484/cushions.svg" alt=""/>
+		    </div>
+		    <div class="option" data-option="base">
+		        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1376484/base.svg" alt=""/>
+		    </div>
+		    <div class="option" data-option="supports">
+		        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1376484/supports.svg" alt=""/>
+		    </div>
+		    <div class="option" data-option="back">
+		        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1376484/back.svg" alt=""/>
+		    </div>
+		</div>
+
 		<div class="controls">
 		<div id="js-tray" class="tray">
 		    <div id="js-tray-slide" class="tray__slide"></div>
 		</div>
 
-		<script src = "libs/three.min.js"></script>
-		<script src = "libs/OrbitControls.js"></script>
-		<script src = "libs/loaders/GLTFLoader.js"></script>
-		<script src = "scripts/scene.js"></script>
-		<script src = "scripts/interface.js"></script>
-		<script src = "scripts/load.js"></script>
-		<script src = "scripts/main.js"></script>
+		<script src="libs/three.min.js"></script>
+		<script src="libs/OrbitControls.js"></script>
+		<script src="libs/loaders/GLTFLoader.js"></script>
+		<script src="scripts/scene.js"></script>
+		<script src="scripts/interface.js"></script>
+		<script src="scripts/load.js"></script>
+		<script src="scripts/main.js"></script>
 		<link rel="stylesheet" href="style.css" />
 	</body>
 </div>

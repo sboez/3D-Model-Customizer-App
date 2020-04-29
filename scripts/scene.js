@@ -46,7 +46,7 @@ class SceneInit {
 		this.controls.update();
 	}
 	createRenderer() {
-		this.renderer = new THREE.WebGLRenderer({ antialias: true });
+		this.renderer = new THREE.WebGLRenderer({ canvas, antialias: true });
 		this.renderer.shadowMap.enabled = true;
 		this.renderer.setSize(window.innerWidth, window.innerHeight);
 	}

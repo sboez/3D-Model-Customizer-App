@@ -1,5 +1,6 @@
 let Scene, Load;
 let activeOption = 'legs', loaded = false;
+const canvas = document.querySelector('#c');
 const CTA = document.getElementById('js-cta-notice');
 
 /* Select Option */
@@ -42,23 +43,35 @@ async function init() {
 		swatch.addEventListener('click', Interface.selectSwatch);
 	}
 
-	window.addEventListener('resize', onWindowResize, false);
 	document.body.appendChild(Scene.renderer.domElement);
 }
 
 function animate() {
 	requestAnimationFrame(animate);
 	Scene.renderer.render(Scene.scene, Scene.camera);
+
+	if (resizeRendererToDisplaySize(Scene.renderer)) {
+	    const canvas = Scene.renderer.domElement;
+	    Scene.camera.aspect = canvas.clientWidth / canvas.clientHeight;
+	    Scene.camera.updateProjectionMatrix();
+	}
+
 	if (Load.model != null && loaded == false) {
 	 	Load.modelRotation();
 	 	CTA.classList.add('start');
 	}
 }
 
-function onWindowResize() {
-	Scene.camera.aspect = window.innerWidth / window.innerHeight;
-	Scene.camera.updateProjectionMatrix();
-	Scene.renderer.setSize(window.innerWidth, window.innerHeight);
+function resizeRendererToDisplaySize(renderer) {
+	const canvas = Scene.renderer.domElement;
+	var width = window.innerWidth;
+	var height = window.innerHeight;
+	var canvasPixelWidth = canvas.width / window.devicePixelRatio;
+	var canvasPixelHeight = canvas.height / window.devicePixelRatio;
+
+	const needResize = canvasPixelWidth !== width || canvasPixelHeight !== height;
+	if (needResize) Scene.renderer.setSize(width, height, false);
+	return needResize;
 }
 
 letsPlay();

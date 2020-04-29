@@ -57,6 +57,14 @@ html {
     text-decoration: underline;
 }
 
+#c {
+    width: 100%;
+    height: 100%;
+    display: block;
+    top: 0;
+    left: 0;
+}
+
 .controls {
     position: absolute;
     bottom: 0;

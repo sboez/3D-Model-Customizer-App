@@ -34,6 +34,9 @@ async function init() {
 	let Interface = new InterfaceInit();
 	Interface.createSwatch(colors);
 
+	let Slide = new SlideInit();
+	Slide.createSlide(slider, sliderItems);
+
 	const swatches = document.querySelectorAll(".tray__swatch");
 	for (const swatch of swatches) {
 		swatch.addEventListener('click', Interface.selectSwatch);

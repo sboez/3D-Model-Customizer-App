@@ -13,6 +13,14 @@ async function init() {
 	Load = new LoadInit();
 	await Load.loadGltf("assets/models/chair.glb");
 
+	let Interface = new InterfaceInit();
+	Interface.buildColors(colors);
+
+	const swatches = document.querySelectorAll(".tray__swatch");
+	for (const swatch of swatches) {
+		swatch.addEventListener('click', Interface.selectSwatch);
+	}
+
 	window.addEventListener('resize', onWindowResize, false);
 	document.body.appendChild(Scene.renderer.domElement);
 }

@@ -2,39 +2,39 @@ class SceneInit {
 	createScene() {
 		this.scene = new THREE.Scene();
 		this.scene.background = new THREE.Color(0xf1f1f1);
-		this.scene.fog = new THREE.Fog(0xf1f1f1, 20, 10);
+		this.scene.fog = new THREE.Fog(0xf1f1f1, 30, 1);
 
 		this.camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.1, 1000);
 		this.camera.position.set(0, 30, 120);
 
-		this.plane = new THREE.Mesh(new THREE.PlaneBufferGeometry(10000, 10000), new THREE.MeshPhongMaterial({ color: 0xeeeeee, shininess: 0 }));
-		this.plane.rotation.x = -Math.PI / 2;
-		this.plane.position.y = -1;
-		this.plane.receiveShadow = true;
-		this.scene.add(this.plane);
+		const plane = new THREE.Mesh(new THREE.PlaneBufferGeometry(10000, 10000), new THREE.MeshPhongMaterial({ color: 0xeeeeee, shininess: 0 }));
+		plane.rotation.x = -Math.PI / 2;
+		plane.position.y = -1;
+		plane.receiveShadow = true;
+		this.scene.add(plane);
 
 		this.createLights();
 		this.createRenderer();
 	}
 	createLights() {
-		this.hemLight = new THREE.HemisphereLight(0xffffff, 0xffffff, 0.61); 
-		this.hemLight.position.set(0, 50, 0);
-		this.scene.add(this.hemLight);
+		const hemLight = new THREE.HemisphereLight(0xffffff, 0xffffff, 0.61); 
+		hemLight.position.set(0, 50, 0);
+		this.scene.add(hemLight);
 
-		this.dirLight = new THREE.DirectionalLight(0xffffff, 0.5);
-		this.dirLight.position.set(-80, 100, 40);
-		this.dirLight.castShadow = true;
-		this.dirLight.shadow.camera.left = -100;
-		this.dirLight.shadow.camera.right = 100;
-		this.dirLight.shadow.camera.top = 100;
-		this.dirLight.shadow.camera.bottom = -100;
+		const dirLight = new THREE.DirectionalLight(0xffffff, 0.5);
+		dirLight.position.set(-80, 100, 40);
+		dirLight.castShadow = true;
+		dirLight.shadow.camera.left = -100;
+		dirLight.shadow.camera.right = 100;
+		dirLight.shadow.camera.top = 100;
+		dirLight.shadow.camera.bottom = -100;
 
 		this.targetObject = new THREE.Object3D();
 		this.scene.add(this.targetObject);
-		this.dirLight.target = this.targetObject;
+		dirLight.target = this.targetObject;
 
-		this.dirLight.shadow.mapSize = new THREE.Vector2(1024, 1024); 
-	    this.scene.add(this.dirLight);
+		dirLight.shadow.mapSize = new THREE.Vector2(1024, 1024); 
+	    this.scene.add(dirLight);
 	}
 	createControls() {
 		this.controls = new THREE.OrbitControls(this.camera, this.renderer.domElement);

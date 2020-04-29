@@ -1,5 +1,6 @@
 /* initial material to 3D model */
 const INITIAL_MTL = new THREE.MeshPhongMaterial({ color: 0xf1f1f1, shininess: 10 });
+const LOADER = document.getElementById('js-loader');
 
 const INITIAL_MAP = [
   {childID: "back", mtl: INITIAL_MTL},
@@ -8,6 +9,8 @@ const INITIAL_MAP = [
   {childID: "legs", mtl: INITIAL_MTL},
   {childID: "supports", mtl: INITIAL_MTL},
 ];
+
+let rotate = 0;
 
 class LoadInit {
 	loadGltf(path) {
@@ -30,6 +33,7 @@ class LoadInit {
 				Scene.scene.add(this.model);
 				resolve(gltf.scene);
 			});
+			LOADER.remove();
 		});
 	}
 	/* change material of all my model's parts to have his shadow on the floor  */
@@ -43,4 +47,9 @@ class LoadInit {
 			}
 		});
 	}
+	modelRotation() {
+		++rotate;
+		if (rotate <= 120) this.model.rotation.y += Math.PI / 60;
+		else loaded = true;
+}
 }

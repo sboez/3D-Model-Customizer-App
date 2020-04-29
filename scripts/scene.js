@@ -32,8 +32,6 @@ class SceneInit {
 		this.targetObject = new THREE.Object3D();
 		this.scene.add(this.targetObject);
 		dirLight.target = this.targetObject;
-
-		dirLight.shadow.mapSize = new THREE.Vector2(1024, 1024); 
 	    this.scene.add(dirLight);
 	}
 	createControls() {
@@ -44,6 +42,7 @@ class SceneInit {
 		this.controls.enablePan = false;
 		this.controls.dampingFactor = 0.3;
 		this.controls.maxDistance = 300;
+		this.controls.target = new THREE.Vector3(0, 15, 0);
 		this.controls.update();
 	}
 	createRenderer() {

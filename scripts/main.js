@@ -1,5 +1,6 @@
 let Scene, Load;
-var activeOption = 'legs';
+let activeOption = 'legs', loaded = false;
+const CTA = document.getElementById('js-cta-notice');
 
 /* Select Option */
 const options = document.querySelectorAll(".option");
@@ -45,6 +46,10 @@ async function init() {
 function animate() {
 	requestAnimationFrame(animate);
 	Scene.renderer.render(Scene.scene, Scene.camera);
+	if (Load.model != null && loaded == false) {
+	 	Load.modelRotation();
+	 	CTA.classList.add('start');
+	}
 }
 
 function onWindowResize() {

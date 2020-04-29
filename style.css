@@ -138,7 +138,7 @@ html {
     background-position: center;
 }
 
-.drag-notice {
+.cta {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -155,7 +155,7 @@ html {
     position: absolute;
 }
 
-.drag-notice.start {
+.cta.start {
     -webkit-animation: popout 0.25s 3s forwards;
     animation: popout 0.25s 3s forwards;
 }

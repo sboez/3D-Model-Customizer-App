@@ -40,7 +40,7 @@ class SceneInit {
 		this.controls.minPolarAngle = Math.PI / 3;
 		this.controls.enableDamping = true;
 		this.controls.enablePan = false;
-		this.controls.dampingFactor = 0.3;
+		this.controls.dampingFactor = 0.2;
 		this.controls.maxDistance = 300;
 		this.controls.target = new THREE.Vector3(0, 15, 0);
 		this.controls.update();

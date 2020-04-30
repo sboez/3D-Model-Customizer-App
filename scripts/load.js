@@ -14,29 +14,26 @@ let rotate = 0;
 
 class LoadInit {
 	loadGltf(path) {
-		return new Promise((resolve) => {
-			const loader = new THREE.GLTFLoader()
-	    	loader.load(path, (gltf) => {
-				this.model = gltf.scene;
-				this.model.traverse((child) => {
-					if (child.isMesh) {
-						child.castShadow = true;
-						child.receiveShadow = true;
-					}
-				});
-				this.model.scale.multiplyScalar(40);
-				this.model.rotation.y = Math.PI;
-				this.model.position.y = -1;
-				for (let object of INITIAL_MAP) {
-					this.initColor(this.model, object.childID, object.mtl);
+		const loader = new THREE.GLTFLoader()
+    	loader.load(path, (gltf) => {
+			this.model = gltf.scene;
+			this.model.traverse((child) => {
+				if (child.isMesh) {
+					child.castShadow = true;
+					child.receiveShadow = true;
 				}
-				Scene.scene.add(this.model);
-				resolve(gltf.scene);
 			});
+			this.model.scale.multiplyScalar(40);
+			this.model.rotation.y = Math.PI;
+			this.model.position.y = -1;
+			for (let object of INITIAL_MAP) {
+				this.initColor(this.model, object.childID, object.mtl);
+			}
+			Scene.scene.add(this.model);
 			LOADER.remove();
 		});
 	}
-	/* change material of all my model's parts to have his shadow on the floor  */
+	/* change material of all model's parts to have his shadow on the floor */
 	initColor(parent, type, mtl) {
 		parent.traverse((child) => {
 			if (child.isMesh) {
@@ -51,5 +48,5 @@ class LoadInit {
 		++rotate;
 		if (rotate <= 120) this.model.rotation.y += Math.PI / 60;
 		else loaded = true;
-}
+	}
 }

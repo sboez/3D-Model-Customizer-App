@@ -21,4 +21,5 @@ Start local server :
 python -m SimpleHTTPServer
 ```
 
-[<img width="700" alt="Capture d’écran 2020-04-29 à 21 47 04" src="https://user-images.githubusercontent.com/23494780/80639995-1cee5c00-8a63-11ea-9824-707e303deec2.png">](https://sboez.github.io/3D-Model-Customizer-App/)
+[<img width="700" alt="Capture d’écran 2020-04-30 à 10 58 43" src="https://user-images.githubusercontent.com/23494780/80692247-9b81e280-8ad1-11ea-8adb-e0de688b438a.png">
+](https://sboez.github.io/3D-Model-Customizer-App/)

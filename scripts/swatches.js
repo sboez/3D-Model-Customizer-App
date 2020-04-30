@@ -1,36 +1,4 @@
-/* add textures first, then random color */
-const colors = [
-{
-    texture: './assets/img/wood_.jpg',
-    size: [2, 2, 2],
-    shininess: 60
-},
-{
-    texture: './assets/img/fabric_.jpg',
-    size: [4, 4, 4],
-    shininess: 0
-},
-{
-    texture: './assets/img/pattern_.jpg',
-    size: [8, 8, 8],
-    shininess: 10
-},
-{
-    texture: './assets/img/denim_.jpg',
-    size: [3, 3, 3],
-    shininess: 0
-},
-{
-    texture: './assets/img/quilt_.jpg',
-    size: [6, 6, 6],
-    shininess: 0
-}];
-
-for(let i = 0; i < 50; ++i) {
-	colors.push({color: (Math.floor(Math.random() * 16777215).toString(16))});
-}
-
-class InterfaceInit {
+class SwatchesInit {
 	createSwatch(colors) {
 		const TRAY = document.getElementById('js-tray-slide');
 		for (let [i, color] of colors.entries()) {
@@ -43,7 +11,7 @@ class InterfaceInit {
 			TRAY.append(swatch);
 		}
 	}
-	/* check if texture and build one or build a new PhongMaterial out of the color */
+	/* check if texture and build one or build a new Material out of the color */
 	selectSwatch(e) {
 		let color = colors[parseInt(e.target.dataset.key)];
 		let new_mtl;

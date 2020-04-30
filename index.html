@@ -36,7 +36,7 @@
 		@keyframes flip {
 			0% { transform: rotate(0); }
 			50% { transform: rotateY(180deg); }
-			100% { transform: rotateY(180deg)  rotateX(180deg); }
+			100% { transform: rotateY(180deg) rotateX(180deg); }
 		}
 		</style>
 	</head>
@@ -46,6 +46,7 @@
 
 		<span class="cta" id="js-cta-notice">Drag to rotate 360&#176;</span>
 
+		<!-- Model parts options -->
 		<div class="options">
 		    <div class="option --is-active" data-option="legs">
 		        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1376484/legs.svg" alt=""/>
@@ -81,9 +82,11 @@
 
 		<script src="libs/three.min.js"></script>
 		<script src="libs/OrbitControls.js"></script>
-		<script src="libs/loaders/GLTFLoader.js"></script>
+		<script src="libs/GLTFLoader.js"></script>
 		<script src="scripts/scene.js"></script>
-		<script src="scripts/interface.js"></script>
+		<script src="scripts/colors.js"></script>
+		<script src="scripts/selected.js"></script>
+		<script src="scripts/swatches.js"></script>
 		<script src="scripts/slide.js"></script>
 		<script src="scripts/load.js"></script>
 		<script src="scripts/main.js"></script>
